@@ -1,0 +1,18 @@
+CREATE TABLESPACE test11 DATAFILE '/home/oracle/app/oracle/oradata/itrek/test111' SIZE 512M;
+CREATE USER test11 IDENTIFIED BY test11;
+grant "RESOURCE" to test11;
+grant "CONNECT" to test11;
+grant create session,create table,create user,create view, create sequence to test11;
+
+GRANT CREATE ANY SYNONYM TO test11;
+GRANT CREATE ANY VIEW TO test11;
+
+CREATE PUBLIC SYNONYM DROP PUBLIC SYNONYM TO RESOURCE;
+
+alter user test11 quota unlimited on users;
+
+alter user test11
+DEFAULT TABLESPACE test11
+QUOTA UNLIMITED ON test11
+TEMPORARY TABLESPACE temp01;
+>SELECT name FROM v$datafile;  
