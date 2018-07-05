@@ -1,4 +1,0 @@
----
-- name: restart puppet
-  service: name=puppet state=started
-  
