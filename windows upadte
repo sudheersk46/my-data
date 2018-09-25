@@ -1,0 +1,4 @@
+remove windows\winsxs\pending.xml
+ramove download from windows\softwaredistrubution
+sfc /scnnow /offbootdir:c:\ offwindir:d:\
+dism /image:c:\ /cleanup-image /revertpendingactions
