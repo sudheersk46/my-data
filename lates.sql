@@ -20,4 +20,24 @@ alter database   datafile '/u01/app/oracle/oradata/XE/abc.dbf' resize 150m ;
 select *  from v$datafile
 select username , default_tablespace,temporary_tablespace,created,account_status,profile,password from dba_users;
 
+show parameter
+slect V$parameter
+slect v$session
+slect v$instance
+slect * form user_objects where objects_name='tables;
+select * from tab;
+    select table_name from user_tables;
+select * from dcitionary;
+tabs
+dba_tables
+all_tables
+user_tables
+Catalog Views / Data Dictionary Views
+
+The data dictionary views, also known as catalog views, let you monitor the state of the database in real time:
+
+    The USER, ALL, and DBA views show information about schema objects that are accessible to you, at different levels of privilege.
+    The V$ views show performance-related information.
+    The _PRIVS views show privilege information for different combinations of users, roles, and objects.
+
 
