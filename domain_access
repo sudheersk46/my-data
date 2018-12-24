@@ -1,0 +1,9 @@
+# Cmnd alias specification
+Cmnd_Alias MODE=/bin/chmod * /opt/Appzillon/ 
+Cmnd_Alias PKGA= /usr/bin/dpkg * /opt/user_data/*
+Cmnd_Alias PKGR= /usr/bin/dpkg -r * 
+Cmnd_Alias APT=/usr/bin/apt-get update,/usr/bin/apt-get upgrade
+
+
+#group Access
+"%domain users" ALL = MODE, PKGA, PKGR, APT
