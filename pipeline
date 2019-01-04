@@ -1,9 +1,16 @@
 pipeline {
 agent { label 'ubuntu' }
+environment{ pass = "p@ssw0rd"}
+//env.ty = '1.4'
 stages{
 stage('test') {
 steps {
 sh 'echo hello running pipline >> /tmp/test.txt '
+}
+}
+stage('enter pass') {
+steps {
+input 'enter pass'
 }
 }
 stage('mkdir') {
@@ -14,6 +21,7 @@ sh 'mkdir -p /tmp/trrr'
 stage('get hostname') {
 steps {
 sh 'hostname'
+sh 'echo $ty'
 }
 }
 stage('storage') {
@@ -23,8 +31,27 @@ sh 'df -h '
 }
 stage('serial no') {
 steps {
-sh 'echo passowrd| sudo --stdin dmidecode  -t 1 | grep -i serial'
+//withEnv(['pass=password']) {
+//sh 'echo $pass'
+//sh 'echo $pass'
+sh 'echo $pass | sudo --stdin dmidecode  -t 1 | grep -i serial'
+}
+}
+stage('cd') {
+steps {
+dir('/home/superuser') {
 }
 }
 }
+
+stage('pwd') {
+steps {
+pwd()
 }
+}
+
+}
+}
+/*withCredentials([usernamePassword(credentialsId: '855d6b8b-a7b6-47ef-8768-f4ad1fd3767a', passwordVariable: 'p@ssw0rd', usernameVariable: 'user')]) {
+#   // some block
+*/
