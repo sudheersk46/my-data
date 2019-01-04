@@ -1,0 +1,30 @@
+pipeline {
+agent { label 'ubuntu' }
+stages{
+stage('test') {
+steps {
+sh 'echo hello running pipline >> /tmp/test.txt '
+}
+}
+stage('mkdir') {
+steps {
+sh 'mkdir -p /tmp/trrr'
+}
+}
+stage('get hostname') {
+steps {
+sh 'hostname'
+}
+}
+stage('storage') {
+steps {
+sh 'df -h '
+}
+}
+stage('serial no') {
+steps {
+sh 'echo passowrd| sudo --stdin dmidecode  -t 1 | grep -i serial'
+}
+}
+}
+}
