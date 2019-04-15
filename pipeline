@@ -1,6 +1,6 @@
 pipeline {
 agent { label 'ubuntu' }
-environment{ pass = "p@ssw0rd"}
+environment{ pass = "paswword"}
 //env.ty = '1.4'
 stages{
 stage('test') {
@@ -39,7 +39,7 @@ sh 'echo $pass | sudo --stdin dmidecode  -t 1 | grep -i serial'
 }
 stage('cd') {
 steps {
-dir('/home/superuser') {
+dir('/home/user') {
 }
 }
 }
