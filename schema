@@ -1,4 +1,4 @@
-CREATE TABLESPACE test11 DATAFILE '/home/oracle/app/oracle/oradata/itrek/test111' SIZE 512M;
+CREATE TABLESPACE test11 DATAFILE '/home/test111' SIZE 512M;
 CREATE USER test11 IDENTIFIED BY test11;
 grant "RESOURCE" to test11;
 grant "CONNECT" to test11;
@@ -15,4 +15,5 @@ alter user test11
 DEFAULT TABLESPACE test11
 QUOTA UNLIMITED ON test11
 TEMPORARY TABLESPACE temp01;
->SELECT name FROM v$datafile;  
+
+SELECT name FROM v$datafile;  
