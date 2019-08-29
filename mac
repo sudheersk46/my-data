@@ -1,3 +1,4 @@
 https://apple.stackexchange.com/questions/350066/how-to-disable-usb-mass-storage-device-in-macos-mojave
 kextunload  ##  cmd to unload module 
 kextutil## similar to modprobe in mac
+kextutil, kextstat, kextload, kmodunload (I think they mean kextunload). Thes
