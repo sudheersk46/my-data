@@ -2,3 +2,12 @@ https://apple.stackexchange.com/questions/350066/how-to-disable-usb-mass-storage
 kextunload  ##  cmd to unload module 
 kextutil## similar to modprobe in mac
 kextutil, kextstat, kextload, kmodunload (I think they mean kextunload). Thes
+
+
+Makeusb
+
+diskutil erasedisk JHFS+ name disk3
+diskutil unmountdisk /dev/disk3
+dd=if=name.img of=/dev/rdisk4 bs=4m
+
+(Rdisk = raw disk for faster writes in mac)
